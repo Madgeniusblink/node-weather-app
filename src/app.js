@@ -18,11 +18,14 @@ hbs.registerPartials(partialsPath)
 
 app.use(express.static(publicDirectoryPath))
 
+const website = 'MadGeniusBlink.com'
+
 
 app.get('/', (req, res) => {
     res.render('index', {
         title: 'Weather App',
-        name: 'Cristian Romero'
+        name: 'Cristian Romero',
+        website
     })
 })
 
@@ -31,7 +34,7 @@ app.get('/about', (req, res) => {
         title: 'About',
         name: 'Cristian Romero',
         bio: 'Self thought Digital Marketing, Business, and full stack developer',
-        rating: 100
+        website
     })
 })
 
@@ -39,7 +42,8 @@ app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Need Help?',
         msg: 'Need to hire a full Stack Web Developer? MadGeniusBlink@gmail.com',
-        name: 'Cristian Romero'
+        name: 'Cristian Romero',
+        website
     })
 })
 
@@ -76,7 +80,8 @@ app.get('/help/*', (req, res) => {
     res.render('404', {
         errorMessage: 'Help Article not found',
         name: 'Cristian Romero',
-        title: '404'
+        title: '404',
+        website
     })
 })
 
@@ -84,7 +89,8 @@ app.get('*', (req, res) => {
     res.render('404', {
         errorMessage: 'Page not found',
         name: 'Cristian Romero',
-        title: '404'
+        title: '404',
+        website
     })
 })
 
